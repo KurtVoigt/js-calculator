@@ -1,0 +1,166 @@
+:root{
+    background-color: black;
+    color:green;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#wholeThing{
+    margin-left: 36vw;
+    margin-top: 20vh;
+    
+    
+}
+
+#calcHeader{
+    margin-top: 15vh;
+    text-align: center;
+}
+
+h1{
+    font-size: 5vh;
+    font-weight: bold;
+}
+
+#outerContainer{
+    margin: auto;
+    margin-top: 4vh;
+    border: groove;
+    border-color: green;
+    border-width: 9px;
+    
+    display: grid;
+    width: 30vw;
+    height: 45vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "display display display backspace"
+    "clear exponent factorial division"
+    "nine eight seven multiplication"
+    "six five four subtraction"
+    "three two one addition"
+    "negative zero decimal equals";
+}
+
+img{
+    height: 50%;
+    width: 50%;
+}
+
+button{
+    color: green;
+    background-color: black;
+    font-weight: 900;
+    font-size: 19px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.operator{
+    color: red;
+}
+    
+#warningDiv{
+    text-align: center;
+}
+
+#fullDisplay{
+    grid-area: display;
+    color: green;
+}
+
+#screen{
+    font-size: larger;
+    text-align: right;
+    padding-top: 7%;
+    font-weight: 500;
+    
+}
+
+#expressionShow{
+    padding-top: 4px;
+}
+
+#backspace{    
+    grid-area: backspace;
+}
+
+#clear{
+    
+    grid-area: clear;
+}
+
+#exponent{
+    grid-area: exponent;
+}
+
+#factorial{
+    grid-area: factorial;
+}
+
+#division{
+    grid-area: division;
+}
+
+#multiplication{
+    grid-area: multiplication;
+}
+
+#subtraction{
+    grid-area: subtraction;
+}
+
+#addition{
+    grid-area: addition;
+}
+
+#equals{
+    grid-area: equals;
+}
+
+#nine{
+    grid-area: nine;
+}
+
+#eight{
+    grid-area: eight;
+}
+
+#seven{
+    grid-area: seven;
+}
+
+#six{
+    grid-area: six;
+}
+
+#five{
+    grid-area: five;
+}
+
+#four{
+    grid-area: four;
+}
+
+#three{
+    grid-area: three;
+}
+
+#two{
+    grid-area: two;
+}
+
+#one{
+    grid-area: one;
+}
+
+#zero{
+    grid-area: zero;
+}
+
+#negative{
+    grid-area: negative;
+}
+
+#decimal{
+    grid-area: decimal;
+}
