@@ -1,5 +1,7 @@
-
+//equation class, class for evaluating expressions typed into HTML document
 let equation = class{
+
+    //expression will hold an equation to be evaluated as it is being typed in i.e 2*3+5
     constructor(expr){
         this.expression = [];
         this.operators = ["+", "-", "*", "/", "=", "!", "+-", "^"];
@@ -13,10 +15,12 @@ let equation = class{
         return this.isOperator(this.expression[this.expression.length-1]);
     }
 
+    //every click of an operator will call this function, appending the 
     appendToExpression(numOrOperator){
         if(numOrOperator === "!"){
             this.expression.push(numOrOperator);
-            this.expression.push("wutever");
+            //placeholder string for factorials as an expression needs two "sides"
+            this.expression.push("factorialString");
         }
         else{
             this.expression.push(numOrOperator);
@@ -26,7 +30,7 @@ let equation = class{
     popFromExpression(){
         this.expression.pop();
     }
-
+    //removes recently evaluated expression
     reformExpression(found){
            
             this.expression.splice(found-2, 2);
@@ -63,8 +67,13 @@ let equation = class{
     }
 
     //evaluates the expression
+    /*In order to enforce order of operations the expression string is 
+      run through several loops searching for an operator, when one is found
+      it is evaluated and the expression is reformed to have the evaluated sub expression into it
+      i.e -> 2+3!*7 -> 2+6*7 -> 2+42 -> 44
+    */
     evaluate(){
-        
+
      //factorial
     for(let i = 0; i < this.expression.length; i++){
         if(this.operators[5] === this.expression[i]){
@@ -140,11 +149,8 @@ function checkNewExpression(newEx){
     }
 }
 
-//let expr = [3,"!","wuteva", "/", 12, "+", 4, "+", 4, "^", 16];
-myEquation = new equation();
-//console.log(myEquation.evaluate());
-//(myEquation.expression);
 
+let myEquation = new equation();
 
 let topScreen = document.querySelector("#expressionShow");
 let screen = document.querySelector("#screen");
@@ -194,7 +200,7 @@ negative.onclick = function(){
 }
 
 equals.onclick = function(){
-    if(buffer == "" && myEquation.expression[myEquation.expression.length-1] != "wutever"){
+    if(buffer == "" && myEquation.expression[myEquation.expression.length-1] != "factorialString"){
         document.querySelector("#warningDiv").innerText = "Please finish the expression with a digit";
         return;
     }
@@ -205,7 +211,6 @@ equals.onclick = function(){
     newExpression = true;
     buffer = screen.innerText;
     myEquation.expression = [];
-    console.log(myEquation.expression)
 }
 
 addition.onclick = function(){
@@ -309,54 +314,74 @@ backspace.onclick = function(){
     buffer = buffer.slice(0, -1);
 }
 zero.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "0";
     buffer += "0";
 
 }
 
 one.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "1";
     buffer += "1";
 
 }
 
 two.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "2";
     buffer += "2";
 
 }
 
 three.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "3";
     buffer += "3";
 }
 
 four.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "4";
     buffer += "4";
 }
 
 five.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "5";
     buffer += "5";
 }
 
 six.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "6";
     buffer += "6";
 }
 
 seven.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "7";
     buffer += "7";
 }
 
 eight.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "8";
     buffer += "8";
 }
 
 nine.onclick = function(){
+    if(screen.innerText === "0")
+        screen.innerText = "";
     screen.innerHTML += "9";
     buffer += "9";
 

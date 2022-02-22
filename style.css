@@ -4,12 +4,7 @@
     font-family: 'Press Start 2P', cursive;
 }
 
-#wholeThing{
-    margin-left: 36vw;
-    margin-top: 20vh;
-    
-    
-}
+
 
 #calcHeader{
     margin-top: 15vh;
@@ -29,8 +24,8 @@ h1{
     border-width: 9px;
     
     display: grid;
-    width: 30vw;
-    height: 45vh;
+    width: 25vw;
+    height: 50vh;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: 
@@ -66,9 +61,14 @@ button{
 #fullDisplay{
     grid-area: display;
     color: green;
+    display: flex;
+    flex-direction: column;
 }
 
 #screen{
+    display:flex;
+    justify-content: end;
+    align-items: flex-end;
     font-size: larger;
     text-align: right;
     padding-top: 7%;
