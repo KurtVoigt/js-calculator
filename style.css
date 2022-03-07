@@ -73,6 +73,7 @@ button{
     text-align: right;
     padding-top: 7%;
     font-weight: 500;
+    overflow: hidden;
     
 }
 

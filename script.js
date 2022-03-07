@@ -70,7 +70,7 @@ let equation = class{
     /*In order to enforce order of operations the expression string is 
       run through several loops searching for an operator, when one is found
       it is evaluated and the expression is reformed to have the evaluated sub expression into it
-      i.e -> 2+3!*7 -> 2+6*7 -> 2+42 -> 44
+      i.e -> [2,+,3,!,"factorialString",*,7] -> [2,+,6,*,7] -> [2,+,42] -> [44]
     */
     evaluate(){
 
@@ -78,7 +78,6 @@ let equation = class{
     for(let i = 0; i < this.expression.length; i++){
         if(this.operators[5] === this.expression[i]){
             this.expression[i+1] = this.fact(this.expression[i-1]);
-            //will have to put in a dummy when inserting with a !
             this.reformExpression(i+1);
             i=-1;
         }
